@@ -1,4 +1,24 @@
-
+"""
+A 45 kW rated solar power system has its power output and the Solar irradiance on the PV
+system measured every hour during daylight hours over a day starting at 5am. Based on the
+following data, create a scatter plot of the power output of the PV system against the solar
+irradiance and comment on the relationship between the two. Based on the data, what
+information can you deduce about this day? (Assuming that a clear day in summer will have
+a maximum irradiance reaching the ground of 1kW/m2) [5 marks]
+Time of day Solar Irradiance on the PV
+system (kW/m2)
+Power output from the PV
+system (kW)
+Time    
+05:00   0.149   5.986
+06:00   0.324   12.674
+07:00   0.482   18.342
+08:00   0.597   22.138
+09:00   0.662   24.132
+10:00   0.686   24.787
+11:00   0.677   24.454
+12:00   0.631   22.983
+13:00   0.54    20.158
 14:00   0.397   15.12
 15:00   0.229   8.993
 16:00   0.077   3.099
@@ -10,7 +30,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from gplearn.genetic import SymbolicRegressor
 from sklearn.utils.random import check_random_state
-
 
 # Let's create a dataframe from the data above. We'll put everything in a dictionary and then use the keys as the headers for our dataframe.
 # Times need to be strings, because they're not numbers. Other values can be floats. I probably don't need a dataframe, but... why not?
@@ -58,7 +77,6 @@ plt.title('Solar Irradiance vs. Time of Day')  # Sets the title of our graph
 plt.grid(True)  # We want a grid
 plt.legend()  # We also want a legend
 plt.show()  # This will generate a popup in VS Code with the graph. Save and close to move on.
-
 
 # OK - let's try to figure out the relationship between power output and solar irradiance.
 # I haven't used symbolic regression techniques much, so I'm going to use the gplearn library to do this - and some help from GitHub Copilot populate the parameters.
